@@ -1,0 +1,13 @@
+
+
+.centro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+.div {
+    width: 500px;
+    margin-top: 200px;
+}
