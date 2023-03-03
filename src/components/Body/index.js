@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form, Button, ListGroup } from "react-bootstrap";
 import "./index.css";
-
+import img_fundo from "../../assets/img_fundo.png"
 export function Body() {
   const [task, setTask] = useState("");
   const [description, setDescription] = useState("");
@@ -34,13 +34,13 @@ export function Body() {
   };
 
   return (
-    <main className="centro">
-      <div className="div">
+    <main className="centro" >
+      <div className="div" >
         <Form size="sm">
           <Form.Group className="input-task" controlId="taskForm.ControlInput1">
             <Form.Label>Tarefa</Form.Label>
             <Form.Control
-              placeholder="Tarefas"
+              placeholder="Tarefa"
               value={task}
               onChange={(e) => setTask(e.target.value)}
             />
@@ -84,13 +84,13 @@ export function Body() {
             <>
               <ListGroup>
                 <ListGroup.Item className="lista">
-                  <h2>{task.task}</h2>
+                  <h3><h2>Tarefa:</h2>{task.task}</h3>
                   <br />
-                  <h3>{task.description}</h3>
+                  <h3><h2>Descrição:</h2>{task.description}</h3>
                   <br />
-                  <h4>{task.dataAtual}</h4>
+                  <h4><h3>Data Atual:</h3>{task.dataAtual}</h4>
                   <br />
-                  <h4>{task.dataFinal}</h4>
+                  <h4><h3>Data Final:</h3>{task.dataFinal}</h4>
                   <br />
                 </ListGroup.Item>
               </ListGroup>
