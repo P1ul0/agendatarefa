@@ -1,11 +1,11 @@
 import { Body } from "../components/Body";
-import Navbar from "../components/NavBar";
+import { Layoult } from "../components/Layoult";
 
 export const PageTask = () => {
   return (
     <>
-    <Navbar/>
-    <Body/>
+      <Layoult />
+      <Body />
     </>
   );
 };

@@ -9,5 +9,17 @@
 
 .div {
     width: 500px;
-    margin-top: 200px;
+    margin-top: 50px;
+}
+
+.btn_add {
+    margin-top: 20px;
+}
+.btn_remove {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.lista {
+    margin-top: 20px;
 }
