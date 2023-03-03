@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/agendatarefa/static/css/main.eda4d217.css",
+    "main.js": "/agendatarefa/static/js/main.49d2f3ed.js",
+    "index.html": "/agendatarefa/index.html",
+    "main.eda4d217.css.map": "/agendatarefa/static/css/main.eda4d217.css.map",
+    "main.49d2f3ed.js.map": "/agendatarefa/static/js/main.49d2f3ed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eda4d217.css",
+    "static/js/main.49d2f3ed.js"
+  ]
+}
