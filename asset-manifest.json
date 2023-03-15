@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/agendatarefa/static/css/main.9bf99682.css",
-    "main.js": "/agendatarefa/static/js/main.33c07534.js",
+    "main.css": "/agendatarefa/static/css/main.681e0abb.css",
+    "main.js": "/agendatarefa/static/js/main.5f7fb048.js",
     "static/media/img_fundo.png": "/agendatarefa/static/media/img_fundo.6651122d849c0bb8bdb8.png",
     "index.html": "/agendatarefa/index.html",
-    "main.9bf99682.css.map": "/agendatarefa/static/css/main.9bf99682.css.map",
-    "main.33c07534.js.map": "/agendatarefa/static/js/main.33c07534.js.map"
+    "main.681e0abb.css.map": "/agendatarefa/static/css/main.681e0abb.css.map",
+    "main.5f7fb048.js.map": "/agendatarefa/static/js/main.5f7fb048.js.map"
   },
   "entrypoints": [
-    "static/css/main.9bf99682.css",
-    "static/js/main.33c07534.js"
+    "static/css/main.681e0abb.css",
+    "static/js/main.5f7fb048.js"
   ]
 }
