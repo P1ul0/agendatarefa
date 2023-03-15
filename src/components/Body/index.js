@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Form, Button, ListGroup } from "react-bootstrap";
+import { Form, Button, ListGroup, Alert } from "react-bootstrap";
 import "./index.css";
-import img_fundo from "../../assets/img_fundo.png"
+
 export function Body() {
   const [task, setTask] = useState("");
   const [description, setDescription] = useState("");
@@ -16,17 +16,37 @@ export function Body() {
     setDataFinal("");
   };
 
+  const DataAtual = () => {
+    let data = new Date();
+    let dia = data.getDate();
+    let mes = data.getMonth() + 1;
+    let ano = data.getFullYear();
+    if (mes < 10) {
+      return ano + "-" + "0" + mes + "-" + dia;
+    }
+    return ano + "-" + mes + "-" + dia;
+  };
+
   const AddTask = () => {
-    setTasks([
-      {
-        task: task,
-        description: description,
-        dataAtual: dataAtual,
-        dataFinal: dataFinal,
-      },
-      ...tasks,
-    ]);
-    Clear();
+    if (
+      task === "" &&
+      description === "" &&
+      dataAtual === "" &&
+      dataFinal === ""
+    ) {
+      alert("Todos os Campos São Obrigatorio");
+    } else {
+      setTasks([
+        {
+          task: task,
+          description: description,
+          dataAtual: DataAtual(),
+          dataFinal: dataFinal,
+        },
+        ...tasks,
+      ]);
+      Clear();
+    }
   };
 
   const RemoveTask = () => {
@@ -34,11 +54,11 @@ export function Body() {
   };
 
   return (
-    <main className="centro" >
-      <div className="div" >
+    <main className="centro">
+      <div className="div">
         <Form size="sm">
           <Form.Group className="input-task" controlId="taskForm.ControlInput1">
-            <Form.Label>Tarefa</Form.Label>
+            <Form.Label></Form.Label>
             <Form.Control
               placeholder="Tarefa"
               value={task}
@@ -49,23 +69,15 @@ export function Body() {
             className="input-description"
             controlId="description.ControlInput2"
           >
-            <Form.Label>Descrição</Form.Label>
+            <Form.Label></Form.Label>
             <Form.Control
               placeholder="Descrição"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="data.ControlInput2">
-            <Form.Label>Data Atual</Form.Label>
-            <Form.Control
-              type="date"
-              value={dataAtual}
-              onChange={(e) => setDataAtual(e.target.value)}
-            />
-          </Form.Group>
           <Form.Group controlId="dataFinal.ControlInput2">
-            <Form.Label>Data Final</Form.Label>
+            <Form.Label></Form.Label>
             <Form.Control
               type="date"
               value={dataFinal}
@@ -79,21 +91,39 @@ export function Body() {
             Limpar Lista
           </Button>
         </Form>
+
         {tasks.map((task) => {
           return (
             <>
-              <ListGroup>
-                <ListGroup.Item className="lista">
-                  <h3><h2>Tarefa:</h2>{task.task}</h3>
+              <ul className="lista">
+                <li>
+                  <h3>
+                    <h2>Tarefa:</h2>
+                    {task.task}
+                  </h3>
                   <br />
-                  <h3><h2>Descrição:</h2>{task.description}</h3>
+                </li>
+                <li>
+                  <h3>
+                    <h2>Descrição:</h2>
+                    {task.description}
+                  </h3>
                   <br />
-                  <h4><h3>Data Atual:</h3>{task.dataAtual}</h4>
+                </li>
+                <li>
+                  <h4>
+                    <h3>Data Atual:</h3>
+                    {task.dataAtual}
+                  </h4>
                   <br />
-                  <h4><h3>Data Final:</h3>{task.dataFinal}</h4>
-                  <br />
-                </ListGroup.Item>
-              </ListGroup>
+                </li>
+
+                <h4>
+                  <h3>Data Final:</h3>
+                  {task.dataFinal}
+                </h4>
+                <br />
+              </ul>
             </>
           );
         })}
